@@ -3,10 +3,10 @@ import os
 
 from src.api.main import app
 
-# Get the OpenAPI schema
+# Generate the OpenAPI schema from the FastAPI app
 openapi_schema = app.openapi()
 
-# Write to file
+# Ensure interfaces directory exists and write the schema
 output_dir = "interfaces"
 os.makedirs(output_dir, exist_ok=True)
 output_path = os.path.join(output_dir, "openapi.json")
